@@ -98,7 +98,7 @@ public class ReusableLogEventFactory implements LogEventFactory {
      */
     public static void release(final LogEvent logEvent) { // LOG4J2-1583
         if (logEvent instanceof MutableLogEvent) {
-            ((MutableLogEvent) logEvent).reserved = false;
+            ((MutableLogEvent) logEvent).release();
         }
     }
 }

@@ -501,4 +501,9 @@ public class MutableLogEvent implements LogEvent, ReusableMessage, ParameterVisi
     private Message getNonNullImmutableMessage() {
         return message != null ? message : new SimpleMessage(String.valueOf(messageText));
     }
+
+    void release() {
+        reserved = false;
+        clear();
+    }
 }
